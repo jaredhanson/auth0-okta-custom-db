@@ -30,7 +30,7 @@ function getByEmail(email, callback) {
     } else if (response.status !== 200) {
       return response.json()
       	.then(function(json) {
-        	return Promise.reject(new Error(JSON.stringify(json)));
+        	return Promise.reject(new Error(json.errorSummary));
       	});
     }
     
